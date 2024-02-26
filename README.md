@@ -1,7 +1,7 @@
 # wordpress-announcement
 
 **Contributor:** Li Lianhua (Oaklee)  
-**Tags:** Categories, Exclusions, Home, Pages  
+**Tags:** announcement, Exclusions, PHP, Pages  
 **Minimum required:** 4.0  
 **Tested up to:** 5.8  
 **Stable tag:** 1.0  
