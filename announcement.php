@@ -84,6 +84,7 @@ add_action('wp_enqueue_scripts', 'enqueue_bootstrap');
         margin: 0 auto;
         text-align: center;
     }
+    
 .imgnotice {
     display: block;
     margin: 20px auto; /* 上下间距为 20px，左右居中 */
