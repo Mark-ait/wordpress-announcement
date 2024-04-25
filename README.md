@@ -60,8 +60,7 @@ Unordered list:
 - The third thing
 
 ## functions.php add the following code
-`` 
-// 公告红点
+`` // 公告红点
 function gonggao_notification_shortcode() {
     // 获取所有公告
     $all_announcements = get_option('all_GongGao', array());
