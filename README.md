@@ -59,4 +59,42 @@ Unordered list:
 - other things
 - The third thing
 
+## functions.php add the following code
+`` 
+// 公告红点
+function gonggao_notification_shortcode() {
+    // 获取所有公告
+    $all_announcements = get_option('all_GongGao', array());
+
+    // 检查是否有新公告
+    $has_new_announcement = false;
+    if (!empty($all_announcements)) {
+        $latest_announcement = end($all_announcements);
+        $latest_announcement_time = $latest_announcement['time'];
+
+        $read_announcement_time = get_option('read_GongGao_time', 0);
+
+        $three_days_ago = strtotime('-3 days');
+
+        if ($latest_announcement_time > $read_announcement_time) {
+            $has_new_announcement = true;
+        }
+    }
+
+    // 返回红点和文本HTML
+    ob_start();
+    ?>
+    <span class="notification-wrapper">
+        <a href="//ooize.com/notice"><span class="notification-text"><i class="bi bi-bell-fill"></i> 公告</span></a>
+        <?php if ($has_new_announcement && $latest_announcement_time >= $three_days_ago) : ?>
+            <span class="notification-dot word"></span>
+        <?php endif; ?>
+    </span>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('gonggao_notification', 'gonggao_notification_shortcode');
+
+``
+
 > "This plugin is awesome!" - Oaklee
