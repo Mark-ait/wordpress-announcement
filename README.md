@@ -85,7 +85,7 @@ function gonggao_notification_shortcode() {
     ob_start();
     ?>
     <span class="notification-wrapper">
-        <a href="//ooize.com/notice"><span class="notification-text"><i class="bi bi-bell-fill"></i> 公告</span></a>
+        <a href="/path"><span class="notification-text"><i class="bi bi-bell-fill"></i> 公告</span></a>
         <?php if ($has_new_announcement && $latest_announcement_time >= $three_days_ago) : ?>
             <span class="notification-dot word"></span>
         <?php endif; ?>
